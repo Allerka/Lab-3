@@ -6,12 +6,12 @@ public class conditionals {
 		Scanner scan = new Scanner(System.in);
 		String name;
 		int entry;
-		String cont;
+		char cont = 'y';
 
 		// initial input
 		System.out.println("Hi there! What's your name?");
 		name = scan.nextLine();
-		do {
+		while (cont == 'y' || cont == 'Y') {
 			System.out.println("Hi " + name + ". Give me a number from 1 to 100.");
 			entry = scan.nextInt();
 			while (entry <= 0 || entry >= 101) {
@@ -37,8 +37,8 @@ public class conditionals {
 
 			// continue prompt
 			System.out.print("Continue? (y/n): ");
-			cont = scan.next();
-		} while (cont.equalsIgnoreCase("y"));
+			cont = scan.next().charAt(0);
+		} 
 		scan.close();
 		System.out.println("Alright, bye " + name + ".");
 	}
